@@ -1,0 +1,61 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2진법 변환 report</title>
+  </head>
+  <body>
+    <script>
+      //   function report(n) {
+      //     let answer = "";
+      //     if (n === 0) {
+      //       return;
+      //     } else {
+      //       report(parseInt(n / 2));
+      //       return (answer = n % 2);
+      //     }
+      //   }
+
+      function solution(num) {
+        let answer = "";
+        function DFS(num) {
+          if (num === 0) {
+            return;
+          } else {
+            DFS(parseInt(num / 2));
+            answer += num % 2;
+          }
+        }
+        DFS(num);
+        return answer;
+      }
+      console.log(solution(12));
+
+      let i = 0;
+      function hanoi(num, from, to, other) {
+        if (num == 0) {
+          return;
+        }
+        hanoi(num - 1, from, other, to);
+        console.log(
+          `${i++} : ${num}을 ${leftCenterRight(from)}에서 ${leftCenterRight(
+            to
+          )}로 옮긴다.`
+        );
+        hanoi(num - 1, other, to, from);
+      }
+      function leftCenterRight(number) {
+        switch (number) {
+          case 0:
+            return "처음";
+          case 1:
+            return "가운데";
+          case 2:
+            return "끝";
+        }
+      }
+      hanoi(4, 0, 1, 2);
+    </script>
+  </body>
+</html>

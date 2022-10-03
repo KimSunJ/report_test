@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        호이스팅 : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것처럼 행동
+        Tempral Dead Zone
+    </pre>
+    <script>
+      let age2 = 30;
+      function showAge() {
+        console.log(age);
+        let age = 20;
+        // function scope 안에서 일어나는 Temporal Dead Zone
+      }
+      let name;
+      name = "Mike";
+      var age;
+      age = 30;
+      // const gender;
+      // gender = 'male';
+      // const에서 에러가 난다.
+      // 선언과 동시에 할당을 바로 안했기 때문
+      // let 과 const를 사용 권장 하는 이유 : 예측 가능한 결과를 내고 버그를 줄일 수 있다.
+
+      // 객체 리터럴 - 비슷한 객체를 여러개 만들어야할 경우 -> 생성자 함수 사용
+      //   let user = { name: "Mike", age: 30 };
+      // 생성자 함수
+      //   function Item(title, price){
+      // this.title = title;
+      // this.price = price;
+      // this.showPrice = function(){
+      // console.log(`가격운 ${price}원 입니다`);
+      // }
+      // return
+      //   }
+
+      // -> computed property (계산된 프로퍼티)
+
+      let a = "age";
+      const user = {
+        name: "Mike",
+        [a]: 30, //age : 30
+      };
+
+      const user2 = {
+        [1 + 4]: 5,
+        ["안녕" + "하세요"]: "Hello",
+      };
+
+      // user -> {5:5, 안녕하세요 : "Hello"}
+    </script>
+  </body>
+</html>

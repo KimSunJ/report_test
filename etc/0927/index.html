@@ -1,0 +1,41 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 코딩 테스트
+      // 문제 정수 num이 짝수일 경우 "Even"을 반환하고, 홀수인 경우 "Odd"를 반환하는 함수 solution을 완성해주세요
+      // num은 int 범위의 정수입니다.
+      // 0은 짝수입니다.
+      function solution(num) {
+        let answer = "";
+        if ((num = 0 || num % 2)) {
+          return "Even";
+          // "Even"을 반환
+        } else {
+          return "Odd";
+          // "Odd"를 반환
+        }
+      }
+      console.log(solution(3));
+      console.log(solution(4));
+
+      function watermelon(n) {
+        let answer = "";
+        if (n % 2 === 0) {
+          answer += "수";
+          return answer;
+        } else {
+          answer += "박";
+          return answer;
+        }
+      }
+      console.log(watermelon(4));
+      console.log(watermelon(3));
+    </script>
+  </body>
+</html>

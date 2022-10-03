@@ -1,0 +1,46 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recursion Function</title>
+  </head>
+  <body>
+    <script>
+      let s = 0;
+      for (let i = 1; i < 101; i++) {
+        s += i;
+      }
+      console.log(s);
+
+      let n = 100;
+      console.log((n * (n + 1)) / 2);
+
+      // recursion function
+      function f(n) {
+        if (n <= 1) {
+          return 1;
+          // 종료 조건
+        }
+        return n + f(n - 1);
+        // 재귀함수
+      }
+      console.log(f(100));
+
+      function fibonacci(num) {
+        if (num == 1 || num == 2) {
+          return 1;
+        }
+        return fibonacci(num - 1) + fibonacci(num - 2);
+      }
+      console.log(fibonacci(7));
+      // 피보나치(5) 피보나치(4) + 피보나치(3) -> 3+2
+      // 피보나치(4) 피보나치(3) + 피보나치(2) -> 2+1
+      // 피보나치(3) 피보나치(2) + 피보나치(1) -> 1+1
+      // 피보나치(2) -> 1
+      // 피보나치(1) -> 1
+      // f(f(f(f(2) + f(1)) + f(2)) + f(f(2) + f(1)))
+      // 재귀로 하였을 때 효율이 떨어짐 f(2)를 계속해서 더하고 있다.
+    </script>
+  </body>
+</html>
